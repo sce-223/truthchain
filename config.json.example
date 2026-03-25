@@ -1,0 +1,5 @@
+{
+  "stellarSecretKey": "SBXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "stellarPublicKey": "GBXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "horizonUrl": "https://horizon-testnet.stellar.org"
+}

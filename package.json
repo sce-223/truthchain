@@ -1,14 +1,25 @@
 {
-  "name": "stl",
+  "name": "truthchain",
   "version": "0.1.0",
   "private": true,
+  "description": "TruthChain MVP for decentralized news consensus on Stellar Testnet",
   "scripts": {
     "dev": "next dev",
+    "dev:lan": "next dev --hostname 0.0.0.0 --port 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "start:lan": "next start --hostname 0.0.0.0 --port 3000",
+    "lint": "eslint",
+    "cf:tunnel:login": "powershell -ExecutionPolicy Bypass -File .\\scripts\\cloudflared.ps1 tunnel login",
+    "cf:tunnel:create": "powershell -ExecutionPolicy Bypass -File .\\scripts\\cloudflared.ps1 tunnel create truthchain-local",
+    "cf:tunnel:quick": "powershell -ExecutionPolicy Bypass -File .\\scripts\\cloudflared.ps1 tunnel --url http://localhost:3000",
+    "cf:tunnel:validate": "powershell -ExecutionPolicy Bypass -File .\\scripts\\cloudflared.ps1 tunnel --config .cloudflared/config.yml ingress validate",
+    "cf:tunnel:run": "powershell -ExecutionPolicy Bypass -File .\\scripts\\cloudflared.ps1 tunnel --config .cloudflared/config.yml run"
   },
   "dependencies": {
+    "@stellar/freighter-api": "^6.0.1",
+    "@stellar/stellar-sdk": "^14.6.1",
+    "lucide-react": "^1.6.0",
     "next": "16.2.1",
     "react": "19.2.4",
     "react-dom": "19.2.4"
